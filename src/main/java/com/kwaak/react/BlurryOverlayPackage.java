@@ -6,6 +6,7 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
+import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.uimanager.ViewManager;
 
 import java.util.ArrayList;
@@ -13,12 +14,12 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class BlurryOverlayPackage implements ReactPackage {
-    private Activity mActivity = null;
+public class BlurryOverlayPackage extends ReactContextBaseJavaModule implements ReactPackage {
 
-    public BlurryOverlayPackage(Activity activity){
-        mActivity = activity;
+    public BlurryOverlayPackage(ReactApplicationContext reactContext) {
+        super(reactContext);
     }
+
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactApplicationContext) {
         List<NativeModule> modules = new ArrayList<>();
@@ -33,7 +34,12 @@ public class BlurryOverlayPackage implements ReactPackage {
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
         return Arrays.<ViewManager>asList(
-                new BlurryOverlayManager(mActivity)
+                new BlurryOverlayManager(getCurrentActivity())
         );
+    }
+
+    @Override
+    public String getName() {
+        return "Blurry Overlay";
     }
 }
