@@ -46,7 +46,7 @@ public class BlurryOverlayView extends ImageView {
         Log.i(LOGTAG, String.format("viewGroup %s", viewGroup));
         Log.i(LOGTAG, String.format("this %s", this));
 
-        Blurry.Composer c = Blurry.with(activity)
+        Blurry.Composer c = Blurry.with(getContext())
                 .radius(this.radius)
                 .sampling(this.sampling);
 

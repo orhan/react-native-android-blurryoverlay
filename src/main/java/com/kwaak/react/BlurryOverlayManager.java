@@ -1,10 +1,10 @@
 package com.kwaak.react;
 
-import android.app.Activity;
-
 import com.facebook.react.uimanager.ReactProp;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
+
+import android.app.Activity;
 
 public class BlurryOverlayManager extends SimpleViewManager<BlurryOverlayView> {
 
