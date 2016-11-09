@@ -1,6 +1,6 @@
 package com.kwaak.react;
 
-import com.facebook.react.uimanager.annotations.ReactProp;
+import com.facebook.react.uimanager.ReactProp;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
 
@@ -38,9 +38,8 @@ public class BlurryOverlayManager extends SimpleViewManager<BlurryOverlayView> {
         view.setSamplingAndUpdate(sampling);
     }
 
-    @ReactProp(name = "color")
+    @ReactProp(name = "color", customType = "Color")
     public void setColor(BlurryOverlayView view, String color) {
         view.setColorAndUpdate(color);
     }
 }
-
