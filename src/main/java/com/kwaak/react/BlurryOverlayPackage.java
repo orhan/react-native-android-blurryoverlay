@@ -12,6 +12,13 @@ import java.util.Collections;
 import java.util.List;
 
 public class BlurryOverlayPackage implements ReactPackage {
+    private Activity mActivity = null;
+
+    public BlurryOverlayPackage(Activity activity){
+        mActivity = activity;
+        super(reactContext);
+    }
+
 
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactApplicationContext) {
@@ -27,7 +34,7 @@ public class BlurryOverlayPackage implements ReactPackage {
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
         return Arrays.<ViewManager>asList(
-                new BlurryOverlayManager(reactContext.getCurrentActivity())
+                new BlurryOverlayManager(mActivity)
         );
     }
 }
