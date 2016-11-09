@@ -1,5 +1,7 @@
 package com.kwaak.react;
 
+import android.app.Activity;
+
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
 import com.facebook.react.bridge.NativeModule;
@@ -14,9 +16,9 @@ import java.util.List;
 public class BlurryOverlayPackage implements ReactPackage {
     private Activity mActivity = null;
 
-    public BlurryOverlayPackage(Activity activity){
+    public BlurryOverlayPackage(Activity activity) {
         mActivity = activity;
-        super(reactContext);
+        super(activity);
     }
 
 
