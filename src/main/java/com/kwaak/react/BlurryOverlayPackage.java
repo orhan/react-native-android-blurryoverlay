@@ -17,7 +17,6 @@ public class BlurryOverlayPackage implements ReactPackage {
     private Activity mActivity = null;
 
     public BlurryOverlayPackage(Activity activity) {
-        super(activity);
         mActivity = activity;
     }
 
